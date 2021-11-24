@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>SIGN-UP</title>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js ">
+		</script>
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+		</script>
+		<script crossdomain src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js ">
+		</script>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+    </head>
+    <body>
+       <div id="sign-up"></div>
+       <script type="text/babel">
+       class ReadName extends React.Component {
+           constructor(props) {
+               super(props);
+               this.state = {
+                   username:'',
+                   password:'',
+                   dob:''
+               }
+                    this.handleChange = this.handleChange.bind(this);
+                    this.handleSubmit= this.handleSubmit.bind(this);
+           }
+           handleChange=function(event) {
+                this.setState({[event.target.name]:event.target.value})
+           }
+           handleSubmit=function(event) {
+            var pwd=this.state.password
+            var usn=this.state.username
+            var dob=this.state.DOB
+            console.log("Username entered "+ usn);
+			console.log("Password entered "+ pwd);
+            console.log("date of birth "+ dob);
+			event.preventDefault();
+           }
+           render() {
+               return (
+                   
+                   <form onSubmit={this.handleSubmit}>
+                    <div class="flexbox">
+                    <div class="username1">
+                    <label>
+						Username:<br/>
+					</label>
+					<input style={{height:"30px"}} name="username" onChange={this.handleChange} 
+					value={this.state.username} type="text" >
+					</input>
+                    </div>
+                    <div class="password1">
+					<label>
+						Password:<br/>
+					</label>
+					<input style={{height:"30px"}} name="password" onChange={this.handleChange} 
+					value={this.state.password} type="password" >
+					</input>
+                    </div>
+                    <div class="dob1">
+                    <label>
+						Date of Birth:<br/>
+					</label>
+					<input style={{height:"30px"}} name="DOB" onChange={this.handleChange} 
+					value={this.state.DOB} type="text" >
+					</input>
+                    </div>
+                    <div class="sub">
+					<input style={{padding:"5px"}} type="submit" value="submit"/>
+                    </div>
+                    </div>
+                    </form>
+                    
+               )
+           }
+       }
+       ReactDOM.render(
+           <ReadName/>,
+           document.querySelector("#sign-up")
+       )
+        </script>
+    </body>
+</html>
