@@ -1,0 +1,15 @@
+body {
+    background-color:darksalmon;
+  
+    /* Smoothly transition the background color */
+    transition: background-color .5s;
+  }
+  
+.flexbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center!important;
+    align-items: center!important;
+    grid-gap: 50px;
+    padding-top: 250px;
+}
